@@ -5,13 +5,21 @@
 class CircleciConfigMerge < Formula
   desc "Generate .circleci/config.yml by merging multiple files"
   homepage "https://github.com/suzuki-shunsuke/circleci-config-merge"
-  version "1.1.1"
+  version "1.1.2"
   license "MIT"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_darwin_arm64.tar.gz"
+      sha256 "85ebb9316fdbc916f0848e063336b8326ec77621939c409ee79460592024cd87"
+
+      def install
+        bin.install "circleci-config-merge"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.1/circleci-config-merge_1.1.1_darwin_amd64.tar.gz"
-      sha256 "f76f787f33e4178e02c23286f7e9efffcdd9916778764b7c1c73000ed9cf9d4e"
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_darwin_amd64.tar.gz"
+      sha256 "d0692aa0dcbd9f70a3b50b7f532dca5ac4f15a040753d0e8e41c6f2be3a4f792"
 
       def install
         bin.install "circleci-config-merge"
@@ -21,8 +29,16 @@ class CircleciConfigMerge < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.1/circleci-config-merge_1.1.1_linux_amd64.tar.gz"
-      sha256 "95cd2890a36b79968baeb483c8a36d1f990a9df9ae2c43500753a8336112b7f6"
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_linux_amd64.tar.gz"
+      sha256 "a7a5cc24ff0bc8110497ce450e32bcbd9fd0da9afd4dc99ebc159fbd86a8c0d6"
+
+      def install
+        bin.install "circleci-config-merge"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_linux_arm64.tar.gz"
+      sha256 "fbe2db3fc6e849fdff627e9971dcfdf492bf29433fe86adb5a6a35a50e4d639b"
 
       def install
         bin.install "circleci-config-merge"
