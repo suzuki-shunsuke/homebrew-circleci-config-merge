@@ -5,21 +5,21 @@
 class CircleciConfigMerge < Formula
   desc "Generate .circleci/config.yml by merging multiple files"
   homepage "https://github.com/suzuki-shunsuke/circleci-config-merge"
-  version "1.1.2"
+  version "1.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_darwin_arm64.tar.gz"
-      sha256 "85ebb9316fdbc916f0848e063336b8326ec77621939c409ee79460592024cd87"
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.3/circleci-config-merge_1.1.3_darwin_arm64.tar.gz"
+      sha256 "5e63a5b64fa61068fe4a624cbc4621d876f0b1e6747a75741e29e7f47c5ec300"
 
       def install
         bin.install "circleci-config-merge"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_darwin_amd64.tar.gz"
-      sha256 "d0692aa0dcbd9f70a3b50b7f532dca5ac4f15a040753d0e8e41c6f2be3a4f792"
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.3/circleci-config-merge_1.1.3_darwin_amd64.tar.gz"
+      sha256 "9b0afdc4362936d239c2cbd50d32ad2465d92c86da50c8f589f3cb63f02bd812"
 
       def install
         bin.install "circleci-config-merge"
@@ -29,16 +29,16 @@ class CircleciConfigMerge < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_linux_amd64.tar.gz"
-      sha256 "a7a5cc24ff0bc8110497ce450e32bcbd9fd0da9afd4dc99ebc159fbd86a8c0d6"
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.3/circleci-config-merge_1.1.3_linux_amd64.tar.gz"
+      sha256 "9e5131b92855da84529b7cf15bd1ea2dcc80e36696fa4027431cd8a146bddcb8"
 
       def install
         bin.install "circleci-config-merge"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.2/circleci-config-merge_1.1.2_linux_arm64.tar.gz"
-      sha256 "fbe2db3fc6e849fdff627e9971dcfdf492bf29433fe86adb5a6a35a50e4d639b"
+      url "https://github.com/suzuki-shunsuke/circleci-config-merge/releases/download/v1.1.3/circleci-config-merge_1.1.3_linux_arm64.tar.gz"
+      sha256 "aa9bc2850c55a30c8ca3d511e176d13c9e8d704ccbedbd7c9e1f649f855f93da"
 
       def install
         bin.install "circleci-config-merge"
